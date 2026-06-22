@@ -663,6 +663,12 @@ select {
   color: var(--white-60);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Hero stat with icon + label only (no number) */
+.hero-stat-icon-only {
+  margin-bottom: 4px;
 }
 
 /* ---- About Section ---- */
@@ -672,9 +678,11 @@ select {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 40px;
+  text-align: center;
 }
 
 .about-image {
@@ -724,17 +732,17 @@ select {
 }
 
 .about-content .section-label {
-  text-align: left;
-  padding: 0;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .about-content .section-label::before,
 .about-content .section-label::after {
-  display: none;
+  display: block;
 }
 
 .about-content .section-title {
-  text-align: left;
+  text-align: center;
 }
 
 .about-text {
@@ -780,15 +788,15 @@ select {
 /* ---- Services Section ---- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
 
 .service-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  padding: 36px 28px;
+  padding: 30px 20px;
   text-align: center;
   transition: all var(--transition-medium);
   position: relative;
@@ -931,7 +939,7 @@ select {
 /* ---- Membership Plans ---- */
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   align-items: stretch;
 }
@@ -1001,6 +1009,29 @@ select {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+.plan-price {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.plan-price-wrapper {
+  margin-bottom: 16px;
+}
+
+.plan-price-old {
+  font-size: 1.1rem;
+  color: var(--white-40);
+  text-decoration: line-through;
+  margin-bottom: -4px;
+}
+
+.plan-price-wrapper .plan-price {
+  margin-bottom: 0;
 }
 
 .plan-desc {
@@ -2129,7 +2160,7 @@ select {
   }
 
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .why-grid {
@@ -2137,8 +2168,8 @@ select {
   }
 
   .plans-grid {
-    grid-template-columns: 1fr;
-    max-width: 450px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
     margin: 0 auto;
   }
 
@@ -2233,11 +2264,112 @@ select {
   }
 
   .about-features {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-feature {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    aspect-ratio: 1;
+    padding: 12px 8px;
+    gap: 8px;
+  }
+
+  .about-feature-icon {
+    font-size: 1.3rem;
+  }
+
+  .about-feature-text {
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .plan-card {
+    padding: 20px 12px;
+    border-radius: var(--radius-lg);
+    min-height: auto;
+  }
+
+  .plan-card.featured {
+    transform: none;
+  }
+
+  .plan-card.featured:hover {
+    transform: translateY(-4px);
+  }
+
+  .plan-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .plan-badge {
+    top: -10px;
+    padding: 3px 10px;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .plan-icon {
+    display: none;
+  }
+
+  .plan-name {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .plan-desc {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+
+  .plan-price {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .plan-price-old {
+    font-size: 0.85rem;
+  }
+
+  .plan-price-wrapper {
+    margin-bottom: 12px;
+  }
+
+  .plan-divider {
+    display: none;
+  }
+
+  .plan-features {
+    display: none;
+  }
+
+  .plan-card .btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    margin-top: auto;
   }
 
   .why-grid {
@@ -2327,3 +2459,100 @@ select {
     font-size: 1.6rem;
   }
 }
+
+/* ---- Carousel Styles ---- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  opacity: 0.5;
+  transform: scale(0.95);
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  color: var(--gold);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.carousel-btn:hover {
+  background: var(--gold);
+  color: var(--bg-primary);
+  border-color: var(--gold);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--glass-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.indicator.active {
+  background: var(--gold);
+  transform: scale(1.2);
+}
+
+/* Fix Testimonial Carousel Height Consistency */
+.testimonial-card.carousel-slide {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
