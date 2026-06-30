@@ -179,35 +179,41 @@ document.addEventListener('DOMContentLoaded', () => {
     return Array.from(galleryItems).filter(item => item.style.display !== 'none');
   };
 
-  const openLightbox = (index) => {
+  const openLightbox = (item) => {
     visibleGalleryItems = getVisibleItems();
-    currentLightboxIndex = index;
-    const img = visibleGalleryItems[index].querySelector('img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('active');
+    currentLightboxIndex = visibleGalleryItems.indexOf(item);
+    if (currentLightboxIndex === -1) return;
+    const img = item.querySelector('img');
+    if (lightboxImg && img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
+    if (lightbox) lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
-    lightbox.classList.remove('active');
+    if (lightbox) lightbox.classList.remove('active');
     document.body.style.overflow = 'auto';
   };
 
   const navigateLightbox = (direction) => {
     visibleGalleryItems = getVisibleItems();
+    if (visibleGalleryItems.length === 0) return;
     currentLightboxIndex = (currentLightboxIndex + direction + visibleGalleryItems.length) % visibleGalleryItems.length;
     const img = visibleGalleryItems[currentLightboxIndex].querySelector('img');
-    lightboxImg.style.opacity = '0';
-    setTimeout(() => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxImg.style.opacity = '1';
-    }, 200);
+    if (lightboxImg && img) {
+      lightboxImg.style.opacity = '0';
+      setTimeout(() => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxImg.style.opacity = '1';
+      }, 200);
+    }
   };
 
-  galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index));
+  galleryItems.forEach((item) => {
+    item.addEventListener('click', () => openLightbox(item));
   });
 
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);

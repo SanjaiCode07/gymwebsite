@@ -12,6 +12,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0A0A0A">
   <title>Lifeline Fitness Gym – Ladies & Gents | Premium Gym in Coimbatore</title>
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
   <link rel="stylesheet" href="style.css?v=2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -31,7 +32,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#hero" class="nav-logo">
-        <div class="nav-logo-icon">LF</div>
+        <img src="images/logo.jpg" alt="Lifeline Fitness Gym Logo" class="nav-logo-img">
         <div class="nav-logo-text">LIFELINE <span>FITNESS</span></div>
       </a>
 
@@ -40,8 +41,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#plans">Plans</a></li>
-        <li><a href="trainers.html">Trainers</a></li>
-        <li><a href="transformations.html">Transformations</a></li>
+        <!-- <li><a href="trainers.html">Trainers</a></li> -->
+        <!-- <li><a href="transformations.html">Transformations</a></li> -->
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -64,8 +65,8 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#plans">Plans</a>
-    <a href="trainers.html">Trainers</a>
-    <a href="transformations.html">Transformations</a>
+    <!-- <a href="trainers.html">Trainers</a> -->
+    <!-- <a href="transformations.html">Transformations</a> -->
     <a href="#testimonials">Reviews</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="btn btn-primary" style="margin-top: 16px;">Join Now</a>
@@ -326,6 +327,7 @@
 
 
   <!-- Transformations Section -->
+  <!--
   <section class="section transformations" id="transformations">
     <div class="container">
       <div class="section-header reveal">
@@ -391,6 +393,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- Gallery Section -->
   <section class="section gallery" id="gallery">
@@ -412,44 +415,86 @@
 
       <div class="gallery-grid">
         <div class="gallery-item reveal" data-category="interior">
-          <img src="images/gallery-1.png" alt="Gym Interior" loading="lazy">
+          <img src="gym/gym-1.jpeg" alt="Gym Interior" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-item-title">Gym Interior</span>
           </div>
           <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
         </div>
+        <div class="gallery-item reveal" data-category="workout">
+          <img src="gym/gym-2.jpeg" alt="Workout Area" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Workout Area</span>
+          </div>
+          <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
+        </div>
         <div class="gallery-item reveal" data-category="cardio">
-          <img src="images/gallery-2.png" alt="Cardio Zone" loading="lazy">
+          <img src="gym/gym-3.jpeg" alt="Cardio Zone" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-item-title">Cardio Zone</span>
           </div>
           <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item reveal" data-category="weights">
-          <img src="images/gallery-3.png" alt="Weight Training Area" loading="lazy">
+          <img src="gym/gym-4.jpeg" alt="Weight Training Area" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-item-title">Weight Training Area</span>
           </div>
           <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
         </div>
-        <div class="gallery-item reveal" data-category="workout">
-          <img src="images/gallery-4.png" alt="Workout Area" loading="lazy">
+        <div class="gallery-item reveal" data-category="equipment">
+          <img src="gym/gym-5.jpeg" alt="Equipment Showcase" loading="lazy">
           <div class="gallery-item-overlay">
-            <span class="gallery-item-title">Workout Area</span>
+            <span class="gallery-item-title">Equipment Showcase</span>
           </div>
           <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item reveal" data-category="workout">
-          <img src="images/gallery-5.png" alt="Members Training" loading="lazy">
+          <img src="gym/gym-6.jpeg" alt="Members Training" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-item-title">Members Training</span>
           </div>
           <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
         </div>
-        <div class="gallery-item reveal" data-category="equipment">
-          <img src="images/gallery-6.png" alt="Equipment Showcase" loading="lazy">
+        <div class="gallery-item reveal" data-category="interior">
+          <img src="gym/gym-7.jpeg" alt="Gym Setup" loading="lazy">
           <div class="gallery-item-overlay">
-            <span class="gallery-item-title">Equipment Showcase</span>
+            <span class="gallery-item-title">Gym Setup</span>
+          </div>
+          <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item reveal" data-category="weights">
+          <img src="gym/gym-8.jpeg" alt="Strength Training" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Strength Training</span>
+          </div>
+          <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item reveal" data-category="equipment">
+          <img src="gym/gym-9.jpeg" alt="Fitness Equipment" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Fitness Equipment</span>
+          </div>
+          <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item reveal" data-category="cardio">
+          <img src="gym/gym-10.jpeg" alt="Cardio Machines" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Cardio Machines</span>
+          </div>
+          <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item reveal" data-category="workout">
+          <img src="gym/gym-11.jpeg" alt="Training Session" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Training Session</span>
+          </div>
+          <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item reveal" data-category="interior">
+          <img src="gym/gym-12.jpeg" alt="Gym Environment" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-title">Gym Environment</span>
           </div>
           <div class="gallery-item-zoom"><i class="fas fa-expand"></i></div>
         </div>
@@ -636,7 +681,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#hero" class="nav-logo">
-            <div class="nav-logo-icon">LF</div>
+            <img src="images/logo.jpg" alt="Lifeline Fitness Gym Logo" class="nav-logo-img">
             <div class="nav-logo-text">LIFELINE <span>FITNESS</span></div>
           </a>
           <p class="footer-desc">
@@ -657,8 +702,8 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#plans">Membership</a></li>
-            <li><a href="trainers.html">Trainers</a></li>
-            <li><a href="transformations.html">Transformations</a></li>
+            <!-- <li><a href="trainers.html">Trainers</a></li> -->
+            <!-- <li><a href="transformations.html">Transformations</a></li> -->
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>

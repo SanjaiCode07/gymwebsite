@@ -345,6 +345,14 @@ select {
   color: var(--bg-primary);
 }
 
+.nav-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold);
+}
+
 .nav-logo-text {
   font-family: var(--font-heading);
   font-weight: 700;
