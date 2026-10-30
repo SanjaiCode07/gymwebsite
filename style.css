@@ -2246,29 +2246,57 @@ select {
     margin-bottom: 40px;
   }
 
+  .hero-badge {
+    font-size: 0.6rem;
+    padding: 6px 14px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
   }
 
   .hero-buttons {
     flex-direction: column;
+    margin-bottom: 36px;
+    gap: 10px;
   }
 
   .hero-buttons .btn {
     width: 100%;
+    font-size: 0.85rem;
+    padding: 12px 20px;
   }
 
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .hero-stat-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
 
   .hero-stat-number {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
   }
 
   .about-features {
@@ -2459,8 +2487,31 @@ select {
     padding: 0 16px;
   }
 
+  .hero-badge {
+    font-size: 0.55rem;
+    padding: 5px 12px;
+  }
+
   .hero-title {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .hero-stat-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .hero-stat-number {
+    font-size: 1.1rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.6rem;
   }
 
   .section-title {
@@ -2564,3 +2615,187 @@ select {
   justify-content: center;
 }
 
+/* ---- Personal Training Banner ---- */
+.pt-banner {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.pt-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 40px;
+  background: linear-gradient(135deg, rgba(242, 194, 48, 0.08) 0%, rgba(242, 194, 48, 0.03) 100%);
+  border: 1px solid rgba(242, 194, 48, 0.2);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.pt-banner-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(242, 194, 48, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pt-banner-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--bg-primary);
+  box-shadow: 0 8px 24px rgba(242, 194, 48, 0.25);
+}
+
+.pt-banner-content {
+  flex: 1;
+}
+
+.pt-banner-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pt-banner-desc {
+  font-size: 0.85rem;
+  color: var(--white-60);
+  line-height: 1.5;
+}
+
+.pt-banner-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 100px;
+}
+
+.pt-banner-amount {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.pt-banner-period {
+  font-size: 0.75rem;
+  color: var(--white-40);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.pt-banner-btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .pt-banner-inner {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pt-banner {
+    padding: 20px 0;
+  }
+
+  .pt-banner-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 14px;
+    row-gap: 3px;
+    padding: 16px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .pt-banner-icon {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 1.15rem;
+    border-radius: var(--radius-sm);
+    align-self: center;
+  }
+
+  .pt-banner-content {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .pt-banner-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    white-space: normal;
+    margin-bottom: 0;
+  }
+
+  .pt-banner-desc {
+    display: none;
+  }
+
+  .pt-banner-price {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  .pt-banner-amount {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .pt-banner-period {
+    font-size: 0.7rem;
+    color: var(--white-60);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+  }
+
+  .pt-banner-btn {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
